@@ -17,12 +17,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class DocumentPDFWriter {
+
     //Medieval.ttf
     //pt-sans.ttf
     //MedievalInitialOne.ttf
 
     private final String DESTINATION = "results/";
-    private final String FONT_FOLDER = "src/main/resources/fonts/MedievalInitialOne.ttf";
+    private final String FONT_FOLDER = "src/main/resources/fonts/pt-sans.ttf";
     private final PdfFont FONT = PdfFontFactory.createFont(FONT_FOLDER, "Cp1251", true);
     private Document document;
 
