@@ -1,0 +1,13 @@
+POST http://localhost:80/send
+Content-Type: application/json
+
+{
+  "name": "Загир",
+  "surname": "Дингизбаев",
+  "passportId": "12341241",
+  "age": 19,
+  "dateOfIssue": "28.07.2000",
+  "phone": "89279232299",
+  "commit": false,
+  "help": false
+}
