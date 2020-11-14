@@ -1,1 +1,3 @@
-It's nothing to see here (пока, сегодня вечером залью что получилось)
+Я хз что сюда всталять.
+use new_db
+db.some_dumb_shit.insertOne({item: "UristMcEmhead"})
