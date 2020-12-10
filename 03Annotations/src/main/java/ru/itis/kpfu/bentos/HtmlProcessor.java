@@ -17,6 +17,7 @@ import java.nio.file.Paths;
 import java.util.Set;
 
 import ru.itis.kpfu.bentos.annotations.Html;
+import ru.itis.kpfu.bentos.annotations.HtmlInput;
 import ru.itis.kpfu.bentos.writer.FreemarkerWriter;
 
 @AutoService(Processor.class)
@@ -28,6 +29,8 @@ public class HtmlProcessor extends AbstractProcessor {
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
 
         Set<? extends Element> annotatedElements = roundEnv.getElementsAnnotatedWith(Html.class);
+        Set<? extends Element> annotatedFields = roundEnv.getElementsAnnotatedWith(HtmlInput.class);
+
         processingEnv.getMessager().printMessage(Diagnostic.Kind.MANDATORY_WARNING, "Count of classes: " + annotatedElements.size());
         for (Element element : annotatedElements) {
 
@@ -35,10 +38,8 @@ public class HtmlProcessor extends AbstractProcessor {
             path = path.substring(1) + element.getSimpleName().toString().toLowerCase() + ".ftl";
             Path out = Paths.get(path);
 
-            try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter(out.toFile()));
-
-                freemarkerWriter.write(writer, element);
+            try (var writer = new BufferedWriter(new FileWriter(out.toFile()))) {
+                freemarkerWriter.write(writer, element, annotatedFields);
             } catch (IOException e) {
                 throw new IllegalArgumentException(e);
             }
