@@ -41,7 +41,7 @@ public class ConfirmController {
     @PostMapping("/confirm/competences")
     public String receiveConfirmed(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestParam Map<String, String> params) {
         log.info("received POST from /confirm/competences");
-        params.entrySet().stream().forEach(e -> log.info(e.toString()));
+        params.entrySet().forEach(e -> log.info(e.toString()));
         confirmService.confirmFromRequest(params);
         return "redirect:/user";
     }

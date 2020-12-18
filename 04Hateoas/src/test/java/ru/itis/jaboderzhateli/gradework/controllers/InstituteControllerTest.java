@@ -32,7 +32,8 @@ public class InstituteControllerTest {
     @Test
     @WithUserDetails(value = "teacher", userDetailsServiceBeanName = "userDetailsServiceImpl")
     public void getPage_isOk() throws Exception {
-        mockMvc.perform(get("/institutes")).andExpect(status().isOk());
+        mockMvc.perform(get("/institutes"))
+                .andExpect(status().isOk());
     }
 
 }
