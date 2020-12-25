@@ -9,6 +9,6 @@ import java.util.UUID;
 public class PasswordGenerationServiceImpl implements PasswordGenerationService {
     @Override
     public String generate() {
-        return UUID.randomUUID().toString().replace("-","").substring(22);
+        return UUID.randomUUID().toString().replace("-", "").substring(22);
     }
 }

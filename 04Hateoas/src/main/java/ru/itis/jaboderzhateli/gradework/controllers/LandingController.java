@@ -15,7 +15,7 @@ public class LandingController {
     @PreAuthorize("permitAll()")
     @GetMapping
     public String getLanding(@AuthenticationPrincipal UserDetailsImpl userDetails, ModelMap map) {
-        if(userDetails != null) {
+        if (userDetails != null) {
             map.put("me", userDetails.getUser());
         }
         return "main/landing";

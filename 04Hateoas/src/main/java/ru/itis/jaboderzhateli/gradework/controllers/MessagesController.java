@@ -53,7 +53,7 @@ public class MessagesController {
             Map response = objectMapper.readValue(jsonMessage, Map.class);
 
             Optional<Channel> channelOptional = chatService.getChannel(channelId);
-            if(channelOptional.isEmpty() || response.get("content") == null
+            if (channelOptional.isEmpty() || response.get("content") == null
                     || ((String) response.get("content")).trim().equals("") || response.get("page_id") == null) {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
@@ -61,14 +61,14 @@ public class MessagesController {
             String pageId = (String) response.get("page_id");
 
             Message message = chatService.saveMessage(channelId, userDetails.getId(), (String) response.get("content"));
-            if(message.getId() == null) {
+            if (message.getId() == null) {
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
 //            Message message = (Message) chatService.getMessage((Long) messageDto.get("message_id")).get("message");
 
             // LONG POLLING
-            for(Pair<String, Channel> pair : map.keySet()) {
-                if(pair.getSecond().equals(channel)) {
+            for (Pair<String, Channel> pair : map.keySet()) {
+                if (pair.getSecond().equals(channel)) {
                     synchronized (map.get(pair)) {
                         map.get(pair).add(message.getId());
                         map.get(pair).notify();
@@ -90,17 +90,17 @@ public class MessagesController {
                                               @RequestParam("page_id") String pageId,
                                               HttpServletRequest request) {
         Optional<Channel> channelOptional = chatService.getChannel(channelId);
-        if(channelOptional.isEmpty()) {
+        if (channelOptional.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         Channel channel = channelOptional.get();
 
-        if(!map.containsKey(Pair.of(pageId, channel))) {
+        if (!map.containsKey(Pair.of(pageId, channel))) {
             map.put(Pair.of(pageId, channel), new ArrayList<>());
         }
 
         synchronized (map.get(Pair.of(pageId, channel))) {
-            if(map.get(Pair.of(pageId, channel)).isEmpty()) {
+            if (map.get(Pair.of(pageId, channel)).isEmpty()) {
                 try {
                     map.get(Pair.of(pageId, channel)).wait();
                 } catch (InterruptedException e) {
@@ -125,7 +125,7 @@ public class MessagesController {
             configuration.setSharedVariable("rc", new RequestContext(request));
             Template template = configuration.getTemplate("message.ftl");
             StringBuilder messagesHtml = new StringBuilder();
-            for(Long messageId : messagesId) {
+            for (Long messageId : messagesId) {
                 Message message = chatService.getMessage(messageId).get();
                 Map<String, Object> attributes = new HashMap();
                 attributes.put("message", message);

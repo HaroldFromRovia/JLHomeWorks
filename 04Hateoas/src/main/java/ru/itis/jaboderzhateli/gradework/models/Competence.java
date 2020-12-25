@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Competence{
+public class Competence {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

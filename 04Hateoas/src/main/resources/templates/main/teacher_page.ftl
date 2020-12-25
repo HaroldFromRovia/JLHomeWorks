@@ -22,7 +22,8 @@
             <h3 class="text-center"><@s.message 'page.teacher.header'/></h3>
             <hr>
             <span class="bold">${teacher.surname} ${teacher.name} ${teacher.middleName}</span>
-            <span><text class="bold">${teacher.institute.name}</text>, <@s.message 'page.teacher.experience'/><text class="bold"> ${teacher.experience} <@s.message 'page.teacher.experience.years'/></text></span>
+            <span><text class="bold">${teacher.institute.name}</text>, <@s.message 'page.teacher.experience'/><text
+                        class="bold"> ${teacher.experience} <@s.message 'page.teacher.experience.years'/></text></span>
             <span>${teacher.position}</span>
             <span><a href="${teacher.link}" class="link"><@s.message 'page.link.kfu'/></a></span>
             <hr>
@@ -34,16 +35,19 @@
                 <hr>
             </#if>
             <#if me?? && me.id == teacher.id>
-                <a class="btn btn-outline-light mt-2" href="/confirm/competences"><@s.message 'page.teacher.confirmations'/></a>
+                <a class="btn btn-outline-light mt-2"
+                   href="/confirm/competences"><@s.message 'page.teacher.confirmations'/></a>
                 <a class="btn btn-light mt-2" href="/user/${teacher.id}/edit"><@s.message 'page.teacher.info.edit'/></a>
             <#else>
                 <#if channelId??>
                     <a class="btn btn-outline-light mt-2" href="/chat?ch=${channelId}"><@s.message 'page.chat'/></a>
                 <#else>
-                    <a class="btn btn-outline-light mt-2" href="/user/${teacher.id}/createChat"><@s.message 'page.chat'/></a>
+                    <a class="btn btn-outline-light mt-2"
+                       href="/user/${teacher.id}/createChat"><@s.message 'page.chat'/></a>
                 </#if>
                 <#if me?? && me.role == "ADMINISTRATION">
-                    <a class="btn btn-light mt-2" href="/user/${teacher.id}/edit"><@s.message 'page.teacher.info.edit'/></a>
+                    <a class="btn btn-light mt-2"
+                       href="/user/${teacher.id}/edit"><@s.message 'page.teacher.info.edit'/></a>
                 </#if>
             </#if>
         </div>

@@ -9,7 +9,8 @@
         <div class="card">
 
             <h3 class="m-0 regular text-center mb-2"><@s.message 'sign.up.teacher.file.header'/></h3>
-            <form method="POST" action="/signUp/teacher/file?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
+            <form method="POST" action="/signUp/teacher/file?${_csrf.parameterName}=${_csrf.token}"
+                  enctype="multipart/form-data">
                 <span class="text-center"><@s.message 'sign.up.teacher.file.hint'/></span>
 
                 <table class="m-0 mb-2 w-100">
@@ -32,10 +33,12 @@
                         <span class="input-group-text" id="file"><@s.message 'sign.file'/></span>
                     </div>
 
-                    <input type="file" class="form-control" name="file" accept=".xls, .xlsx" aria-describedby="file" required>
+                    <input type="file" class="form-control" name="file" accept=".xls, .xlsx" aria-describedby="file"
+                           required>
                 </div>
 
-                <button type="submit" class="btn btn-outline-light w-100 mt-2"><@s.message 'sign.up.teacher.file.button'/></button>
+                <button type="submit"
+                        class="btn btn-outline-light w-100 mt-2"><@s.message 'sign.up.teacher.file.button'/></button>
             </form>
         </div>
     </div>

@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface HtmlInput {
     String type() default "text";
+
     String name() default "";
+
     String placeholder() default "";
 }

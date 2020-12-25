@@ -53,7 +53,7 @@ public class EmployerFormValidation {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isForbidden())
-        .andDo(document("no_csrf_sign_up"));
+                .andDo(document("no_csrf_sign_up"));
     }
 
 }

@@ -19,7 +19,7 @@ public class InstitutesController {
     @PreAuthorize("permitAll()")
     @GetMapping("/institutes")
     public String getInstitutesPage(@AuthenticationPrincipal UserDetailsImpl userDetails, ModelMap map) {
-        if(userDetails != null) {
+        if (userDetails != null) {
             map.put("me", userDetails.getUser());
         }
         map.put("institutes", instituteRepository.findAll());

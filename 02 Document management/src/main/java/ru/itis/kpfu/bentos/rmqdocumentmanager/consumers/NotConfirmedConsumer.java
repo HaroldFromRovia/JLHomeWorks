@@ -22,7 +22,7 @@ public class NotConfirmedConsumer {
     private final ChannelFactory channelFactory;
     private User user;
 
-    public NotConfirmedConsumer(ObjectMapper objectMapper,ChannelFactory channelFactory) {
+    public NotConfirmedConsumer(ObjectMapper objectMapper, ChannelFactory channelFactory) {
         this.objectMapper = objectMapper;
         this.channelFactory = channelFactory;
         consume(channelFactory.createChannel(CONFIRMATION_EXCHANGE, "topic"));

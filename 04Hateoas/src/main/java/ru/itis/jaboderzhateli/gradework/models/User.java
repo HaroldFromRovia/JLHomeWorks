@@ -23,7 +23,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "user", schema = "public")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class User implements Serializable  {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

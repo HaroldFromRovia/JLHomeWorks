@@ -107,7 +107,7 @@ public class UserPageController {
     @GetMapping("/user/{user-id}/edit")
     public String getEditPage(@AuthenticationPrincipal UserDetailsImpl userDetails, @PathVariable("user-id") Long userId, ModelMap map) {
         Optional<User> userOptional = userRepository.findById(userId);
-        if(userOptional.isPresent()) {
+        if (userOptional.isPresent()) {
             map.put("me", userDetails.getUser());
             User user = userOptional.get();
             switch (user.getRole()) {
@@ -161,17 +161,17 @@ public class UserPageController {
     private void resolveForUser(User user, User me, Map<String, String> params) {
         switch (user.getRole()) {
             case STUDENT:
-                if(user.getId().equals(me.getId()) || me.getRole().equals(Role.ADMINISTRATION)) {
+                if (user.getId().equals(me.getId()) || me.getRole().equals(Role.ADMINISTRATION)) {
                     studentService.edit(user, params);
                 }
                 break;
             case EMPLOYER:
-                if(user.getId().equals(me.getId()) || me.getRole().equals(Role.ADMINISTRATION)) {
+                if (user.getId().equals(me.getId()) || me.getRole().equals(Role.ADMINISTRATION)) {
                     employerService.edit(user, params);
                 }
                 break;
             case TEACHER:
-                if(user.getId().equals(me.getId()) || me.getRole().equals(Role.ADMINISTRATION)) {
+                if (user.getId().equals(me.getId()) || me.getRole().equals(Role.ADMINISTRATION)) {
                     teacherService.edit(user, params);
                 }
                 break;

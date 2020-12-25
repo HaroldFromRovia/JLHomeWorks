@@ -129,7 +129,7 @@ public class SignUpServiceImpl implements SignUpService {
             students.forEach(student -> {
                 var password = passwordGenerationService.generate();
                 student.setPassword(passwordEncoder.encode(password));
-                map.put(student,password);
+                map.put(student, password);
             });
 
             studentRepository.saveAll(students);
@@ -154,7 +154,7 @@ public class SignUpServiceImpl implements SignUpService {
             teachers.forEach(teacher -> {
                 var password = passwordGenerationService.generate();
                 teacher.setPassword(passwordEncoder.encode(password));
-                map.put(teacher,password);
+                map.put(teacher, password);
             });
 
             teacherRepository.saveAll(teachers);

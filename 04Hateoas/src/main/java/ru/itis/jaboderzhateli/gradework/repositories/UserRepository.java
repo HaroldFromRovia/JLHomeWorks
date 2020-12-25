@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @RepositoryRestResource
 public interface UserRepository extends JpaRepository<User, Long> {
-    @RestResource(path="byLogin", rel="userLogin")
+    @RestResource(path = "byLogin", rel = "userLogin")
     Optional<User> findByLogin(String login);
 }

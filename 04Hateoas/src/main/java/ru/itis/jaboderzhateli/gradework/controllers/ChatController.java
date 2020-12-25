@@ -34,16 +34,16 @@ public class ChatController {
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/chat")
     public String getChat(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestParam(value = "ch", required = false) Long channelId, ModelMap map) {
-        if(channelId != null) {
+        if (channelId != null) {
             Optional<Channel> channelOptional = chatService.getChannel(channelId);
-            if(channelOptional.isPresent()) {
-                if(!chatService.checkIfUserBelongsToChat(userDetails.getId(), channelId)) {
+            if (channelOptional.isPresent()) {
+                if (!chatService.checkIfUserBelongsToChat(userDetails.getId(), channelId)) {
                     map.put("code", 403);
                     return "error_page";
                 }
                 List<User> users = chatService.getUsersForChannel(channelId);
-                for(User user : users) {
-                    if(!user.getId().equals(userDetails.getId())) {
+                for (User user : users) {
+                    if (!user.getId().equals(userDetails.getId())) {
                         switch (user.getRole()) {
                             case STUDENT:
                                 map.put("user", studentRepository.findById(user.getId()).get());
@@ -121,7 +121,7 @@ public class ChatController {
     @GetMapping("/user/{user-id}/createChat")
     public String createChat(@AuthenticationPrincipal UserDetailsImpl userDetails, @PathVariable("user-id") Long userId, ModelMap map) {
         List<Channel> suitables = chatService.checkIfChannelExistsForUsers(userDetails.getId(), userId);
-        if(suitables.isEmpty()) {
+        if (suitables.isEmpty()) {
             return "redirect:/chat?ch=" + chatService.createChannelForUsers(null, userDetails.getId(), userId).getId();
         } else {
             return "redirect:/chat?ch=" + suitables.get(0).getId();

@@ -12,7 +12,7 @@ import ru.itis.jaboderzhateli.gradework.dto.TeacherDto;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TeacherPoijiDto{
+public class TeacherPoijiDto {
 
     @ExcelCellName("Имя")
     private String name;

@@ -13,7 +13,7 @@ function scrollToBottom() {
 }
 
 function sendMessage() {
-    if($("#message_content").val().trim() === "") {
+    if ($("#message_content").val().trim() === "") {
         $("#message_content").val("");
         return false;
     }
@@ -29,11 +29,11 @@ function sendMessage() {
         data: JSON.stringify(body),
         contentType: "application/json"
     })
-        .done(function(response) {
+        .done(function (response) {
             $("#message_content").val("");
             // alert("Сообщение получено");
         })
-        .fail(function() {
+        .fail(function () {
             alert("Ошибка отправления.");
         });
 
@@ -46,7 +46,7 @@ function receiveMessage() {
         url: "/messages?ch=" + params.get("ch") + "&page_id=" + $("#page_id").val(),
         method: "GET",
         success: function (response) {
-            if($("#chat_empty") != null) {
+            if ($("#chat_empty") != null) {
                 $("#chat_empty").remove();
             }
             $("#chat_window").append($.parseHTML(response));

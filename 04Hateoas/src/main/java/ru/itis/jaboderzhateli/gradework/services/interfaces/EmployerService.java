@@ -10,7 +10,7 @@ public interface EmployerService {
 
     Employer edit(Employer employer, Map<String, String> params);
 
-    Employer edit(User user,Map<String, String> params);
+    Employer edit(User user, Map<String, String> params);
 
     Employer get(Long id);
 

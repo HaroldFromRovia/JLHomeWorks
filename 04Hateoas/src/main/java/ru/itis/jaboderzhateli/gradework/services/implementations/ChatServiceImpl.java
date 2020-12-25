@@ -36,7 +36,7 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public void addUsersToChannel(Long channelId, Long... userIds) {
-        for(Long userId : userIds) {
+        for (Long userId : userIds) {
             channelToUsersRepository.save(ChannelToUser.builder()
                     .channel(Channel.builder().id(channelId).build())
                     .user(User.builder().id(userId).build()).build());
@@ -78,9 +78,9 @@ public class ChatServiceImpl implements ChatService {
         List<ChannelToUser> channels1 = channelToUsersRepository.findByUser_Id(userId1);
         List<ChannelToUser> channels2 = channelToUsersRepository.findByUser_Id(userId2);
         List<Channel> suitableChannels = new ArrayList<>();
-        for(ChannelToUser channel1 : channels1) {
-            for(ChannelToUser channel2 : channels2) {
-                if(channel1.getChannel().getId().equals(channel2.getChannel().getId())) {
+        for (ChannelToUser channel1 : channels1) {
+            for (ChannelToUser channel2 : channels2) {
+                if (channel1.getChannel().getId().equals(channel2.getChannel().getId())) {
                     suitableChannels.add(channel1.getChannel());
                 }
             }
@@ -97,7 +97,7 @@ public class ChatServiceImpl implements ChatService {
     public List<User> getUsersForChannel(Long channelId) {
         List<ChannelToUser> channelToUsers = channelToUsersRepository.findByChannel_Id(channelId);
         List<User> users = new ArrayList<>();
-        for(ChannelToUser channelToUser : channelToUsers) {
+        for (ChannelToUser channelToUser : channelToUsers) {
             users.add(channelToUser.getUser());
         }
         return users;
@@ -107,7 +107,7 @@ public class ChatServiceImpl implements ChatService {
     public List<Channel> getChannelsByUserId(Long userId) {
         List<ChannelToUser> channelToUsers = channelToUsersRepository.findByUser_Id(userId);
         List<Channel> channels = new ArrayList<>();
-        for(ChannelToUser channelToUser : channelToUsers) {
+        for (ChannelToUser channelToUser : channelToUsers) {
             channels.add(channelToUser.getChannel());
         }
         return channels;

@@ -43,7 +43,8 @@ public class StudentCompetenceRepositoryTest {
         String url = "unknown";
         try {
             url = dataSource.getConnection().getMetaData().getURL();
-        }catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
         log.info("USING DATASOURCE: " + url);
     }
 

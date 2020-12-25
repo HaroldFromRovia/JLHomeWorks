@@ -26,21 +26,21 @@ public class ResumeServiceImpl implements ResumeService {
 
     @Override
     public void createResume(User user, Map<String, String> params, Locale locale) {
-        if(!user.getRole().equals(Role.STUDENT)) {
+        if (!user.getRole().equals(Role.STUDENT)) {
             throw new IllegalStateException("Resume creation available only for students!");
         }
         Optional<Student> studentOptional = studentRepository.findById(user.getId());
-        if(studentOptional.isEmpty()) {
+        if (studentOptional.isEmpty()) {
             throw new IllegalStateException("Student account doesn't exist!");
         }
         Student student = studentOptional.get();
         Set<String> competences = new HashSet<>();
         Map<String, String> projects = new HashMap<>();
         boolean studentChanged = false;
-        for(Map.Entry<String, String> param : params.entrySet()) {
+        for (Map.Entry<String, String> param : params.entrySet()) {
             switch (param.getKey()) {
                 case "phone":
-                    if(!param.getValue().trim().equals("") && param.getValue().length() < 14) {
+                    if (!param.getValue().trim().equals("") && param.getValue().length() < 14) {
                         student.setPhone(param.getValue());
                         studentChanged = true;
                     } else {
@@ -48,7 +48,7 @@ public class ResumeServiceImpl implements ResumeService {
                     }
                     break;
                 case "email":
-                    if(param.getValue().matches(".+@.+\\..+")) {
+                    if (param.getValue().matches(".+@.+\\..+")) {
                         student.setEmail(param.getValue());
                         studentChanged = true;
                     } else {
@@ -56,7 +56,7 @@ public class ResumeServiceImpl implements ResumeService {
                     }
                     break;
                 case "bio":
-                    if(!param.getValue().trim().equals("")) {
+                    if (!param.getValue().trim().equals("")) {
                         student.setBio(param.getValue().replaceAll("\\r\\n", "<br>"));
                         studentChanged = true;
                     } else {
@@ -64,12 +64,12 @@ public class ResumeServiceImpl implements ResumeService {
                     }
                     break;
                 default:
-                    if(param.getKey().startsWith("competence-") && !param.getValue().equals(messageSource.getMessage("sign.competence.placeholder", null, locale))) {
+                    if (param.getKey().startsWith("competence-") && !param.getValue().equals(messageSource.getMessage("sign.competence.placeholder", null, locale))) {
                         competences.add(param.getValue());
-                    } else if(param.getKey().startsWith("name-project-") && !param.getValue().trim().equals("")) {
+                    } else if (param.getKey().startsWith("name-project-") && !param.getValue().trim().equals("")) {
                         projects.put(param.getKey(), param.getValue());
-                    } else if(param.getKey().startsWith("link-project-")) {
-                        if(param.getValue().trim().equals("")) {
+                    } else if (param.getKey().startsWith("link-project-")) {
+                        if (param.getValue().trim().equals("")) {
                             projects.remove("name-project-" + param.getKey().substring("link-project-".length()));
                         } else {
                             String key = projects.remove("name-project-" + param.getKey().substring("link-project-".length()));
@@ -81,18 +81,18 @@ public class ResumeServiceImpl implements ResumeService {
         }
         studentRepository.save(student);
         studentCompetenceRepository.deleteByStudentId(student.getId());
-        if(competences.size() > 0) {
+        if (competences.size() > 0) {
             competences.forEach(name -> {
                 Optional<Competence> competenceOptional = competenceRepository.findByName(name);
                 competenceOptional.ifPresent(competence -> {
-                    if(studentCompetenceRepository.findByStudentIdAndCompetenceId(student.getId(), competence.getId()).isEmpty()) {
+                    if (studentCompetenceRepository.findByStudentIdAndCompetenceId(student.getId(), competence.getId()).isEmpty()) {
                         studentCompetenceRepository.save(new StudentCompetence(student, competence, false));
                     }
                 });
             });
         }
         projectRepository.deleteByStudent_Id(student.getId());
-        if(projects.size() > 0) {
+        if (projects.size() > 0) {
             projects.forEach((key, value) -> {
                 projectRepository.save(Project.builder().name(key).link(value).student(student).build());
             });

@@ -16,7 +16,7 @@ public class DocumentExchange {
 
     public void publishTask(Channel channel, String user) {
         try {
-            channel.basicPublish(channelFactory.getEXCHANGE_NAME(), "", null,user.getBytes());
+            channel.basicPublish(channelFactory.getEXCHANGE_NAME(), "", null, user.getBytes());
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }

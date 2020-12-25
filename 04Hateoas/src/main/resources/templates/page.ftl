@@ -27,13 +27,18 @@
     <nav class="navbar sticky-top p-0 d-flex">
         <div class="navbar-brand d-inline-flex m-0">
             <a class="d-inline-flex nav-logo" href="/">
-                <img class="ml-2 kfu-logo align-self-center" src="${rc.getContextPath()}/static/defaults/kfu-logo-true.png" alt="<@s.message 'img.alt.kfu.logo'/>">
+                <img class="ml-2 kfu-logo align-self-center"
+                     src="${rc.getContextPath()}/static/defaults/kfu-logo-true.png"
+                     alt="<@s.message 'img.alt.kfu.logo'/>">
                 <span>Grade&Work</span>
             </a>
             <div class="align-self-center">
-                <a class="pl-2 nav-part" href="/institutes"><i class="fas fa-university icon"></i><@s.message 'navbar.institutes'/></a>
-                <a class="pl-2 nav-part" href="/search"><i class="fas fa-search act-white icon"></i><@s.message 'navbar.search'/></a>
-                <a class="pl-2 nav-part" href="/employers"><i class="fas fa-briefcase act-white icon"></i><@s.message 'navbar.employers'/></a>
+                <a class="pl-2 nav-part" href="/institutes"><i
+                            class="fas fa-university icon"></i><@s.message 'navbar.institutes'/></a>
+                <a class="pl-2 nav-part" href="/search"><i
+                            class="fas fa-search act-white icon"></i><@s.message 'navbar.search'/></a>
+                <a class="pl-2 nav-part" href="/employers"><i
+                            class="fas fa-briefcase act-white icon"></i><@s.message 'navbar.employers'/></a>
             </div>
         </div>
         <#if account>
@@ -58,14 +63,14 @@
             <div class="d-flex flex-column w-90 mr-2">
                 <a href="/user/${message.author.id}" class="link regular">
                     <#if me.id == author.id>
-                        Вы</a>
+                    Вы</a>
+                <#else>
+                    <#if author.role == "ADMINISTRATION">
+                        Деканат</a>
                     <#else>
-                        <#if author.role == "ADMINISTRATION">
-                            Деканат</a>
-                        <#else>
-                            ${author.surname} ${author.name} ${author.middleName}</a>
-                        </#if>
+                        ${author.surname} ${author.name} ${author.middleName}</a>
                     </#if>
+                </#if>
                 <span class="m-0">${message.content}</span>
             </div>
             <span class="w-10 add-grey align-self-center">${message.createdAt}</span>

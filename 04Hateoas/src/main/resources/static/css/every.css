@@ -1,7 +1,23 @@
-@font-face { font-family: PT-Sans; src: url("../fonts/PTSans-Regular.ttf"); }
-@font-face { font-family: PT-Sans-Bold; src: url("../fonts/PTSans-Bold.ttf"); }
-@font-face { font-family: PT-Sans-Italic; src: url("../fonts/PTSans-Italic.ttf"); }
-@font-face { font-family: PT-Sans-Bold-Italic; src: url("../fonts/PTSans-BoldItalic.ttf"); }
+@font-face {
+    font-family: PT-Sans;
+    src: url("../fonts/PTSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: PT-Sans-Bold;
+    src: url("../fonts/PTSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: PT-Sans-Italic;
+    src: url("../fonts/PTSans-Italic.ttf");
+}
+
+@font-face {
+    font-family: PT-Sans-Bold-Italic;
+    src: url("../fonts/PTSans-BoldItalic.ttf");
+}
+
 :root {
     --main-blue: rgb(0, 84, 159);
     --mainer-blue: rgb(0, 85, 165);
@@ -15,11 +31,27 @@
     --bg-white: #eee;
     text-decoration: none;
 }
-.main-blue { color: var(--main-blue); }
-.dark-blue { color: var(--dark-blue); }
-.add-grey { color: var(--add-grey); }
-.act-black { color: var(--act-black); }
-.act-white { color: white; }
+
+.main-blue {
+    color: var(--main-blue);
+}
+
+.dark-blue {
+    color: var(--dark-blue);
+}
+
+.add-grey {
+    color: var(--add-grey);
+}
+
+.act-black {
+    color: var(--act-black);
+}
+
+.act-white {
+    color: white;
+}
+
 body {
     background-color: var(--bg-white);
 }
@@ -28,30 +60,40 @@ body {
 .navbar {
     background-color: var(--main-blue);
 }
+
 .nav-logo {
     color: white;
     font-size: 1.9rem;
     font-family: PT-Sans-Bold;
 }
+
 .nav-logo:hover {
     color: var(--sec-white);
     text-decoration: none;
 }
+
 .nav-part {
     color: var(--sec-white);
     font-family: PT-Sans-Bold;
 }
+
 .nav-part:hover, .nav-part:hover i {
     color: white;
     text-decoration: none;
 }
+
 .nav-or {
     font-family: PT-Sans-Bold;
     color: var(--sec-white);
     margin-top: 0.55rem;
 }
-.nav-sign-in { }
-.nav-employee { }
+
+.nav-sign-in {
+}
+
+.nav-employee {
+}
+
 .kfu-logo {
     height: 2.9rem;
     width: auto;
@@ -62,6 +104,7 @@ body {
     color: var(--sec-white);
     margin: 0 0.2rem 0 0.2rem;
 }
+
 /*.icon:hover {*/
 /*    color: white;*/
 /*}*/
@@ -74,38 +117,45 @@ body {
     border-width: 3px;
     font-family: PT-Sans-Bold;
 }
+
 .btn-light {
     border-color: var(--sec-white);
     font-family: PT-Sans-Bold;
     color: var(--main-blue);
     background-color: white;
 }
+
 .btn-light:hover {
     background-color: var(--main-blue);
     color: white;
 }
+
 .btn-outline-light {
     color: white;
     font-family: PT-Sans-Bold;
     background-color: var(--main-blue);
     border-color: var(--sec-white);
 }
+
 .btn-outline-light:hover {
     color: var(--main-blue);
     background-color: white;
     border-color: var(--sec-white);
 }
+
 .btn-icon {
     border-color: var(--main-blue);
     background-color: white;
     color: var(--main-blue);
     width: 2.917rem;
 }
+
 .btn-icon:hover {
     background-color: var(--main-blue);
     border-color: var(--main-blue);
     color: white;
 }
+
 .btn-icon i {
     font-size: 1.5rem;
 }
@@ -114,6 +164,7 @@ body {
 .card-width {
     max-width: 55rem;
 }
+
 .card {
     padding: 0.5rem;
     font-size: 1.2rem;
@@ -123,6 +174,7 @@ body {
     margin: 0.5rem 0 0 0;
     font-family: PT-Sans;
 }
+
 .inst-card {
     border-style: solid;
     border-width: 3px;
@@ -135,21 +187,26 @@ body {
 .bold {
     font-family: PT-Sans-Bold;
 }
+
 .regular {
     font-family: PT-Sans;
 }
+
 hr {
     margin: 0rem;
     border-width: 3px;
     border-color: var(--sec-white);
 }
+
 .link {
     text-decoration: none;
     color: var(--main-blue);
 }
+
 .link:hover {
     text-decoration: none;
 }
+
 .main-table {
     border-width: 3px;
     border-style: solid;
@@ -160,9 +217,11 @@ hr {
     line-height: 1.22rem;
     text-align: center;
 }
+
 .line-breaker {
     line-height: 1.22rem;
 }
+
 .search-block {
     border-style: solid;
     border-color: var(--main-blue);
@@ -184,6 +243,7 @@ hr {
     border-right-style: none;
     border-color: var(--main-blue);
 }
+
 .input-group .input-group-text-apply {
     min-width: 9.1rem;
     font-family: PT-Sans-Bold;
@@ -196,6 +256,7 @@ hr {
     border-style: solid;
     border-color: var(--main-blue);
 }
+
 .input-group input {
     font-family: PT-Sans;
     font-size: 1.2rem;
@@ -205,6 +266,7 @@ hr {
     border-width: 3px;
     border-color: var(--main-blue);
 }
+
 .custom-select {
     color: var(--act-black);
     font-family: PT-Sans;
@@ -214,12 +276,14 @@ hr {
     border-width: 3px;
     border-color: var(--main-blue);
 }
+
 .custom-checkbox {
     transform: scale(1.1);
     outline-style: solid;
     outline-width: 3px;
     outline-color: var(--main-blue);
 }
+
 /*.agree-label {*/
 /*    font-family: PT-Sans;*/
 /*    font-size: 1.2rem;*/
@@ -228,11 +292,13 @@ hr {
 .btn-group-toggle .btn.agree-button {
     border-color: var(--main-blue);
 }
+
 .btn-group-toggle .btn.agree-button.active {
     background-color: var(--sec-white);
     color: var(--main-blue);
     border-color: var(--main-blue);
 }
+
 /*.sex-check {*/
 /*    width: 100%;*/
 /*    border-width: 3px;*/
@@ -246,24 +312,29 @@ hr {
     border-right-width: 1px;
     /*border-right-style: none;*/
 }
+
 .btn-light-sex-right {
     font-family: PT-Sans-Bold;
     font-size: 1.2rem;
     border-color: var(--main-blue);
 }
+
 .btn-group .btn.btn-light-sex-left.active {
     border-color: var(--main-blue);
     background-color: var(--sec-white);
     color: var(--main-blue);
 }
+
 .btn-group .btn.btn-light-sex-right.active {
     border-color: var(--main-blue);
     background-color: var(--sec-white);
     color: var(--main-blue);
 }
+
 .right-border-none {
     border-right-style: none;
 }
+
 .area {
     border-radius: 0;
     border-width: 3px;
@@ -272,20 +343,25 @@ hr {
     font-size: 1.2rem;
     color: var(--act-black);
 }
+
 .w-90 {
     width: 85%;
 }
+
 .w-10 {
     width: 15%;
 }
+
 .border-top-none {
     border-top-width: 0;
     border-top-style: none;
 }
+
 .border-left-none {
     border-left-width: 0;
     border-left-style: none;
 }
+
 .border-right {
     border-right-style: solid;
     border-right-width: 3px;
@@ -298,10 +374,12 @@ hr {
     border-radius: 0;
     border-width: 3px;
 }
+
 .alert-danger {
     border-color: var(--main-alert);
     background-color: var(--light-alert);
 }
+
 .alert h5 {
     color: var(--main-alert);
     text-align: center;

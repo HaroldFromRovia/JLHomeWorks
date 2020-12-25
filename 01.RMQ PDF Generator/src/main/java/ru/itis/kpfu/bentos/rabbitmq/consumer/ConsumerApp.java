@@ -13,7 +13,7 @@ public class ConsumerApp {
         var descenders = DescendersUtil.findDescenders("ru.itis.kpfu.bentos.rabbitmq",
                 DocumentConsumer.class)
                 .stream()
-                .map( x -> (DocumentConsumer)x)
+                .map(x -> (DocumentConsumer) x)
                 .collect(Collectors.toList());
 
         for (DocumentConsumer descender : descenders) {

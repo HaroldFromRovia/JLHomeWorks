@@ -25,7 +25,7 @@ public class FreemarkerWriter {
             HtmlForm form = element.getAnnotation(HtmlForm.class);
 
             writer.write("<#macro " + useAnnotation.macroName() + ">");
-            writer.write("<form method=\"" + form.method()+ "\" action=\"" + form.action() + "\">");
+            writer.write("<form method=\"" + form.method() + "\" action=\"" + form.action() + "\">");
 
             for (Element field : annotatedFields) {
                 var input = field.getAnnotation(HtmlInput.class);

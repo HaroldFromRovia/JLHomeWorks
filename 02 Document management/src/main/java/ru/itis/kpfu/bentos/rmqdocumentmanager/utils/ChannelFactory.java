@@ -12,7 +12,7 @@ import java.util.concurrent.TimeoutException;
 
 @Data
 @Component
-@Profile({"confirm","all"})
+@Profile({"confirm", "all"})
 public class ChannelFactory {
 
     private final String HOST = "localhost";

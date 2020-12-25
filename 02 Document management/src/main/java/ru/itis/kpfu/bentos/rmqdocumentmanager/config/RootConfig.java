@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 @Configuration
 @PropertySource("classpath:application.properties")
 @AllArgsConstructor
-@Profile({"confirm","all"})
+@Profile({"confirm", "all"})
 public class RootConfig {
 
     private final Environment environment;

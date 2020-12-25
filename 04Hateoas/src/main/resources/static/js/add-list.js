@@ -5,7 +5,7 @@ jQuery.fn.outerHTML = function () {
 function addList(elementPrefix) {
     let element = $("div[id^=" + elementPrefix + "]").last();
     let index = element.attr("id").substring(element.attr("id").indexOf(elementPrefix) + elementPrefix.length);
-    element.after(element.outerHTML().replace(new RegExp( elementPrefix + index, 'g'), elementPrefix + (parseInt(index) + 1)));
+    element.after(element.outerHTML().replace(new RegExp(elementPrefix + index, 'g'), elementPrefix + (parseInt(index) + 1)));
 }
 
 function removeList(button, elementPrefix) {

@@ -17,7 +17,8 @@
             <span class="regular"><@s.message 'page.employers.info'/></span>
 
             <#list employers as employer>
-                <a class="inst-card <#if !employer?is_last>mb-2</#if> bold link" href="/user/${employer.id}">${employer.companyName}</a>
+                <a class="inst-card <#if !employer?is_last>mb-2</#if> bold link"
+                   href="/user/${employer.id}">${employer.companyName}</a>
             </#list>
         </div>
     </div>

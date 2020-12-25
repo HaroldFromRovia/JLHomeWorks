@@ -11,6 +11,6 @@ public @interface MacroUse {
 
     Class<?> input() default Object.class;
 
-    String macroName () default "";
+    String macroName() default "";
 
 }

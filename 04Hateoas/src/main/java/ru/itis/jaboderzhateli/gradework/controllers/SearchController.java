@@ -32,18 +32,18 @@ public class SearchController {
 
     @GetMapping("/search")
     public String searchPage(@AuthenticationPrincipal UserDetailsImpl userDetails, Model model, @RequestParam Map<String, String> params) {
-        if(userDetails != null) {
+        if (userDetails != null) {
             model.addAttribute("me", userDetails.getUser());
         }
         Long selectedInst = -1l;
-        if(params.containsKey("i"))
+        if (params.containsKey("i"))
             selectedInst = Long.parseLong(params.get("i"));
         Long selectedFac = -1l;
-        if(params.containsKey("f"))
+        if (params.containsKey("f"))
             selectedFac = Long.parseLong(params.get("f"));
         List<Long> selectedComp = new LinkedList<>();
         params.entrySet().stream().filter(e -> e.getKey().equals("c"))
-                .forEach(e ->selectedComp.add(Long.parseLong(e.getValue())));
+                .forEach(e -> selectedComp.add(Long.parseLong(e.getValue())));
         log.info("selected comps.: " + selectedComp.toString());
         model.addAttribute("selectedInst", selectedInst);
         model.addAttribute("selectedFac", selectedFac);

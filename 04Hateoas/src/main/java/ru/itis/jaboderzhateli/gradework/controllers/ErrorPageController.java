@@ -15,7 +15,7 @@ public class ErrorPageController implements ErrorController {
 
     @GetMapping("/error")
     public String getErrorPage(@AuthenticationPrincipal UserDetailsImpl userDetails, ModelMap map, HttpServletRequest request) {
-        if(userDetails != null) {
+        if (userDetails != null) {
             map.put("me", userDetails.getUser());
         }
         map.put("code", request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE));

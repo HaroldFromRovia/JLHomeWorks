@@ -11,7 +11,7 @@ import java.util.Optional;
 @RepositoryRestResource
 public interface InstituteRepository extends JpaRepository<Institute, Long> {
 
-    @RestResource(path = "byName", rel="instituteName")
+    @RestResource(path = "byName", rel = "instituteName")
     Optional<Institute> findByName(String name);
 
 }

@@ -28,33 +28,36 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="password"><@s.message 'sign.password'/></span>
                     </div>
-                    <input type="password" tabindex="2" class="form-control" name="password" aria-describedby="password" required>
+                    <input type="password" tabindex="2" class="form-control" name="password" aria-describedby="password"
+                           required>
                 </div>
 
                 <div class="btn-group-toggle mt-2" data-toggle="buttons">
                     <label class="btn btn-light w-100 agree-button">
-                        <input type="checkbox" tabindex="3" name="remember-me" autocomplete="off" value="true"><@s.message 'sign.in.remember.me'/>
+                        <input type="checkbox" tabindex="3" name="remember-me" autocomplete="off"
+                               value="true"><@s.message 'sign.in.remember.me'/>
                     </label>
                 </div>
 
-<#--                <div class="d-inline-flex mt-2 w-100" id="competence-1">-->
-<#--                    <div class="input-group">-->
-<#--                        <div class="input-group-prepend">-->
-<#--                            <span class="input-group-text">Компетенция</span>-->
-<#--                        </div>-->
+                <#--                <div class="d-inline-flex mt-2 w-100" id="competence-1">-->
+                <#--                    <div class="input-group">-->
+                <#--                        <div class="input-group-prepend">-->
+                <#--                            <span class="input-group-text">Компетенция</span>-->
+                <#--                        </div>-->
 
-<#--                        <select class="custom-select" name="competence-1">-->
-<#--                            <option>Java</option>-->
-<#--                            <option>С#</option>-->
-<#--                        </select>-->
-<#--                    </div>-->
+                <#--                        <select class="custom-select" name="competence-1">-->
+                <#--                            <option>Java</option>-->
+                <#--                            <option>С#</option>-->
+                <#--                        </select>-->
+                <#--                    </div>-->
 
-<#--                    <button type="button" onclick="removeList(this)" class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i class="fas fa-times"></i></button>-->
-<#--                </div>-->
+                <#--                    <button type="button" onclick="removeList(this)" class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i class="fas fa-times"></i></button>-->
+                <#--                </div>-->
 
-<#--                <button type="button" id="competence-adder" class="mt-2 btn btn-light w-100">Добавить компетенцию</button>-->
+                <#--                <button type="button" id="competence-adder" class="mt-2 btn btn-light w-100">Добавить компетенцию</button>-->
 
-                <button type="submit" tabindex="4" class="btn btn-outline-light w-100 mt-2"><@s.message 'sign.in.submit'/></button>
+                <button type="submit" tabindex="4"
+                        class="btn btn-outline-light w-100 mt-2"><@s.message 'sign.in.submit'/></button>
             </form>
         </div>
     </div>

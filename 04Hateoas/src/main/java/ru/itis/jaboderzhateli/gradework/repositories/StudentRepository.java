@@ -23,12 +23,12 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     List<Student> findAllByInstituteIdAndFacultyId(Long instituteId, Long facultyId);
 
-    @RestResource(path = "byInstitute", rel="instituteId")
+    @RestResource(path = "byInstitute", rel = "instituteId")
     List<Student> findAllByInstituteId(Long instituteId);
 
-    @RestResource(path = "byInstitutePaged", rel="instituteId")
+    @RestResource(path = "byInstitutePaged", rel = "instituteId")
     Page<Student> findAllByInstituteId(Long institute_id, Pageable pageable);
 
-    @RestResource(path = "byFaculty", rel="facultyId")
+    @RestResource(path = "byFaculty", rel = "facultyId")
     List<Student> findAllByFacultyId(Long facultyId);
 }

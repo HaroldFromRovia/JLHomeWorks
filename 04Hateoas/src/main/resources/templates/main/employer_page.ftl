@@ -23,26 +23,32 @@
             <hr>
             <span><@s.message 'page.employer.organisation'/><text class="bold"> ${employer.companyName}</text></span>
             <span><@s.message 'page.employer.psrn'/><text class="bold"> ${employer.psrn}</text></span>
-            <span><@s.message 'page.employer.juridical.person'/><text class="bold"> ${employer.surname} ${employer.name} ${employer.middleName}</text></span>
+            <span><@s.message 'page.employer.juridical.person'/><text
+                        class="bold"> ${employer.surname} ${employer.name} ${employer.middleName}</text></span>
             <hr>
             <span class="bold"><@s.message 'sign.contacts'/></span>
             <span><@s.message 'sign.contact.email'/>: ${employer.email}</span>
             <span><@s.message 'sign.contact.phone'/>: ${employer.phone}</span>
             <hr>
             <#if me?? && me.id == employer.id>
-                <a class="btn btn-outline-light mt-2" href="/applications"><@s.message 'page.employer.applications'/></a>
-                <a class="btn btn-light mt-2" href="/user/${employer.id}/edit"><@s.message 'page.employer.info.edit'/></a>
+                <a class="btn btn-outline-light mt-2"
+                   href="/applications"><@s.message 'page.employer.applications'/></a>
+                <a class="btn btn-light mt-2"
+                   href="/user/${employer.id}/edit"><@s.message 'page.employer.info.edit'/></a>
             <#else>
                 <#if me?? && me.role == "STUDENT">
-                    <a class="btn btn-outline-light mt-2" href="/apply/${employer.id}"><@s.message 'page.employer.apply'/></a>
+                    <a class="btn btn-outline-light mt-2"
+                       href="/apply/${employer.id}"><@s.message 'page.employer.apply'/></a>
                 </#if>
                 <#if channelId??>
                     <a class="btn btn-outline-light mt-2" href="/chat?ch=${channelId}"><@s.message 'page.chat'/></a>
                 <#else>
-                    <a class="btn btn-outline-light mt-2" href="/user/${employer.id}/createChat"><@s.message 'page.chat'/></a>
+                    <a class="btn btn-outline-light mt-2"
+                       href="/user/${employer.id}/createChat"><@s.message 'page.chat'/></a>
                 </#if>
                 <#if me?? && me.role == "ADMINISTRATION">
-                    <a class="btn btn-light mt-2" href="/user/${employer.id}/edit"><@s.message 'page.teacher.info.edit'/></a>
+                    <a class="btn btn-light mt-2"
+                       href="/user/${employer.id}/edit"><@s.message 'page.teacher.info.edit'/></a>
                 </#if>
             </#if>
         </div>

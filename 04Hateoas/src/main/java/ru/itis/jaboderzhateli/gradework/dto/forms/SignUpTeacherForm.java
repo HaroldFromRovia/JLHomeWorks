@@ -15,9 +15,9 @@ public class SignUpTeacherForm {
 
     @NotBlank
     private String login;
-    @Size(min=8, max = 40)
+    @Size(min = 8, max = 40)
     private String password;
-    @Size(min=8, max = 40)
+    @Size(min = 8, max = 40)
     private String passwordRepeat;
     @NotBlank
     private String name;

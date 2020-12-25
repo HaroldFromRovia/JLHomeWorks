@@ -23,35 +23,42 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="login"><@s.message 'sign.login'/></span>
                     </div>
-                    <input type="text" class="form-control" name="login" aria-describedby="login" placeholder="<@s.message 'sign.login.placeholder'/>" required>
+                    <input type="text" class="form-control" name="login" aria-describedby="login"
+                           placeholder="<@s.message 'sign.login.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="password"><@s.message 'sign.password'/></span>
                     </div>
-                    <input type="password" minlength="8" class="form-control" name="password" aria-describedby="password" placeholder="<@s.message 'sign.password.placeholder'/>" required>
+                    <input type="password" minlength="8" class="form-control" name="password"
+                           aria-describedby="password" placeholder="<@s.message 'sign.password.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="password-repeat"><@s.message 'sign.password.repeat'/></span>
                     </div>
-                    <input type="password" class="form-control" minlength="8" name="passwordRepeat" aria-describedby="password-repeat" placeholder="<@s.message 'sign.password.repeat.placeholder'/>" required>
+                    <input type="password" class="form-control" minlength="8" name="passwordRepeat"
+                           aria-describedby="password-repeat"
+                           placeholder="<@s.message 'sign.password.repeat.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="organisation-name"><@s.message 'sign.up.employer.organisation.name'/></span>
+                        <span class="input-group-text"
+                              id="organisation-name"><@s.message 'sign.up.employer.organisation.name'/></span>
                     </div>
-                    <input type="text" class="form-control" name="organisationName" aria-describedby="organisation-name" placeholder="организации" required>
+                    <input type="text" class="form-control" name="organisationName" aria-describedby="organisation-name"
+                           placeholder="организации" required>
                 </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="psrn"><@s.message 'sign.up.employer.psrn'/></span>
                     </div>
-                    <input type="number" min="1000000000000" max="9999999999999" class="form-control" name="psrn" aria-describedby="psrn" required>
+                    <input type="number" min="1000000000000" max="9999999999999" class="form-control" name="psrn"
+                           aria-describedby="psrn" required>
                 </div>
 
                 <span class="text-center"><@s.message 'sign.up.employer.juridical.person'/></span>
@@ -101,14 +108,18 @@
                     </div>
                     <input type="text" class="form-control" name="link-1" aria-describedby="link-1">
 
-                    <button type="button" onclick="removeList(this, 'link-')" class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i class="fas fa-times"></i></button>
+                    <button type="button" onclick="removeList(this, 'link-')"
+                            class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i
+                                class="fas fa-times"></i></button>
                 </div>
 
-                <button type="button" id="link-adder" class="btn btn-light w-100"><@s.message 'sign.contact.link.button'/></button>
+                <button type="button" id="link-adder"
+                        class="btn btn-light w-100"><@s.message 'sign.contact.link.button'/></button>
 
                 <div class="btn-group-toggle mt-2" data-toggle="buttons">
                     <label class="btn btn-light w-100 agree-button">
-                        <input type="checkbox" name="agreement" required autocomplete="off" value="true"><@s.message 'sign.agreement'/>
+                        <input type="checkbox" name="agreement" required autocomplete="off"
+                               value="true"><@s.message 'sign.agreement'/>
                     </label>
                 </div>
 

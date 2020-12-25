@@ -23,7 +23,8 @@
             <hr>
             <span><text class="bold">${student.surname} ${student.name} ${student.middleName}</text>, ${student.birthday?date}</span>
             <span><text class="bold">${student.institute.name}</text>, ${student.faculty.name}</span>
-            <span><@s.message 'page.student.group'/> <text class="bold">${student.group}</text>, ${student.yearStart?c}-${student.yearGraduate?c}</span>
+            <span><@s.message 'page.student.group'/> <text
+                        class="bold">${student.group}</text>, ${student.yearStart?c}-${student.yearGraduate?c}</span>
             <span><@s.message 'page.student.average'/>: <text class="bold">${student.average}</text></span>
             <span><a href="${student.link}" class="link"><@s.message 'page.link.kfu'/></a></span>
             <hr>
@@ -62,21 +63,23 @@
                 <hr>
             </#if>
             <#if me?? && me.id == student.id>
-<#--                <#if student.competences?? || student.competences?size gt 0>-->
-<#--                    <a class="btn btn-outline-light mt-2" href="/requests"><@s.message 'page.student.requests'/></a>-->
-<#--                    <a class="btn btn-light mt-2" href="/resume/edit"><@s.message 'page.student.resume.create'/></a>-->
-<#--                <#else>-->
+            <#--                <#if student.competences?? || student.competences?size gt 0>-->
+            <#--                    <a class="btn btn-outline-light mt-2" href="/requests"><@s.message 'page.student.requests'/></a>-->
+            <#--                    <a class="btn btn-light mt-2" href="/resume/edit"><@s.message 'page.student.resume.create'/></a>-->
+            <#--                <#else>-->
                 <a class="btn btn-outline-light mt-2" href="/resume/edit"><@s.message 'page.student.resume.edit'/></a>
-<#--                </#if>-->
+            <#--                </#if>-->
                 <a class="btn btn-light mt-2" href="/user/${student.id}/edit"><@s.message 'page.student.info.edit'/></a>
             <#else>
                 <#if channelId??>
                     <a class="btn btn-outline-light mt-2" href="/chat?ch=${channelId}"><@s.message 'page.chat'/></a>
                 <#else>
-                    <a class="btn btn-outline-light mt-2" href="/user/${student.id}/createChat"><@s.message 'page.chat'/></a>
+                    <a class="btn btn-outline-light mt-2"
+                       href="/user/${student.id}/createChat"><@s.message 'page.chat'/></a>
                 </#if>
                 <#if me?? && me.role == "ADMINISTRATION">
-                    <a class="btn btn-light mt-2" href="/user/${student.id}/edit"><@s.message 'page.student.info.edit'/></a>
+                    <a class="btn btn-light mt-2"
+                       href="/user/${student.id}/edit"><@s.message 'page.student.info.edit'/></a>
                 </#if>
             </#if>
         </div>

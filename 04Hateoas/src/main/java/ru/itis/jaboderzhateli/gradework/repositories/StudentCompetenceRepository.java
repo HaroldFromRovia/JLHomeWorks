@@ -15,8 +15,11 @@ import java.util.Optional;
 @RepositoryRestResource
 public interface StudentCompetenceRepository extends JpaRepository<StudentCompetence, StudentCompetenceId> {
     List<StudentCompetence> findAllByConfirmedIsAndCompetence_Teachers(Boolean confirmed, Teacher teacher);
+
     Optional<StudentCompetence> findByStudentIdAndCompetenceId(Long studentId, Long competenceId);
+
     List<StudentCompetence> findAllByConfirmedIsAndCompetenceIn(Boolean confirmed, List<Competence> competences);
+
     @Transactional
     void deleteByStudentId(Long studentId);
 }

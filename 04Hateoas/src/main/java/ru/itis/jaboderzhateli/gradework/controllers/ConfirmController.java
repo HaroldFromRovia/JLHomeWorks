@@ -31,7 +31,8 @@ public class ConfirmController {
 
     @PreAuthorize("hasRole('TEACHER')")
     @GetMapping("/confirm/competences")
-    public String getConfirmationsPage(@AuthenticationPrincipal UserDetailsImpl userDetails, Model model) { ;
+    public String getConfirmationsPage(@AuthenticationPrincipal UserDetailsImpl userDetails, Model model) {
+        ;
         model.addAttribute("teacher", teacherRepository.findById(userDetails.getId()).get());
         model.addAttribute("competences", confirmService.getCompetencesToConfirm(userDetails.getId()));
         return "main/teacher_confirm";

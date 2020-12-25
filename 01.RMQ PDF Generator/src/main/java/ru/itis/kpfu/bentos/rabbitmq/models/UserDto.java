@@ -12,21 +12,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDto {
 
-    @Parameter (names = "--name", description = "User name")
+    @Parameter(names = "--name", description = "User name")
     private String name;
-    @Parameter (names = "--surname",description = "User's surname")
+    @Parameter(names = "--surname", description = "User's surname")
     private String surname;
-    @Parameter (names = "--passportId", description = "User's passport id")
+    @Parameter(names = "--passportId", description = "User's passport id")
     private String passportId;
-    @Parameter (names = "--age", description = "How old user is")
+    @Parameter(names = "--age", description = "How old user is")
     private Integer age;
-    @Parameter (names ="--issueDate", description = "Date of passport issue" )
+    @Parameter(names = "--issueDate", description = "Date of passport issue")
     private String dateOfIssue;
 
     @Parameter(names = "-commit", description = "Flag to recognise that commit command in use")
     private boolean commit = false;
 
     @Parameter(help = true, names = "--help")
-    private boolean help = false ;
+    private boolean help = false;
 
 }

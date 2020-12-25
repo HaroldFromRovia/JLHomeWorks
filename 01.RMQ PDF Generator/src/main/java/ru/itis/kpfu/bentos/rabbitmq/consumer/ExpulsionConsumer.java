@@ -10,7 +10,7 @@ import ru.itis.kpfu.bentos.rabbitmq.models.User;
 import ru.itis.kpfu.bentos.rabbitmq.models.UserDto;
 import ru.itis.kpfu.bentos.rabbitmq.utils.DocumentPDFWriter;
 
-public class ExpulsionConsumer implements DocumentConsumer{
+public class ExpulsionConsumer implements DocumentConsumer {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 

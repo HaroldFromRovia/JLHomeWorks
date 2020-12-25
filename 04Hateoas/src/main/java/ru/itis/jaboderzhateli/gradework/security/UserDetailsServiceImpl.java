@@ -17,14 +17,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        if(login == null || login.equals("")) {
+        if (login == null || login.equals("")) {
             throw new UsernameNotFoundException("Login is empty.");
         }
-        if(!login.trim().equals(login)) {
+        if (!login.trim().equals(login)) {
             throw new UsernameNotFoundException("Unacceptable login format.");
         }
         Optional<User> userOptional = usersRepository.findByLogin(login);
-        if(userOptional.isPresent()) {
+        if (userOptional.isPresent()) {
             User user = userOptional.get();
             return new UserDetailsImpl(user);
         }

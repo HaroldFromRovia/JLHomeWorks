@@ -18,28 +18,36 @@
                     <#list competences as competence>
                         <div class="input-group mb-2 w-100">
                             <div class="input-group-text d-flex flex-column w-90">
-                                <div id="block"><a class="regular link" href="/user/${competence.student.id}">${competence.student.surname} ${competence.student.name} ${competence.student.middleName}, ${competence.student.group}</a></div>
+                                <div id="block"><a class="regular link"
+                                                   href="/user/${competence.student.id}">${competence.student.surname} ${competence.student.name} ${competence.student.middleName}
+                                        , ${competence.student.group}</a></div>
                                 <div>${competence.competence.name}</div>
                             </div>
 
                             <div class="btn-group btn-group-toggle d-flex w-10" data-toggle="buttons">
                                 <label class="btn btn-light btn-light-sex-left btn-confirm w-50 d-flex align-items-center justify-content-center">
-                                    <input type="radio" name="${competence.student.id}_${competence.competence.id}" value="yes" autocomplete="off" id="yes${competence.student.id}_${competence.competence.id}"><@s.message 'confirmation.teacher.yes'/>
+                                    <input type="radio" name="${competence.student.id}_${competence.competence.id}"
+                                           value="yes" autocomplete="off"
+                                           id="yes${competence.student.id}_${competence.competence.id}"><@s.message 'confirmation.teacher.yes'/>
                                 </label>
                                 <label class="btn btn-light btn-light-sex-right btn-confirm w-50 d-flex align-items-center justify-content-center">
-                                    <input type="radio" name="${competence.student.id}_${competence.competence.id}" value="no" autocomplete="off" id="no${competence.student.id}_${competence.competence.id}"><@s.message 'confirmation.teacher.no'/>
+                                    <input type="radio" name="${competence.student.id}_${competence.competence.id}"
+                                           value="no" autocomplete="off"
+                                           id="no${competence.student.id}_${competence.competence.id}"><@s.message 'confirmation.teacher.no'/>
                                 </label>
                             </div>
                         </div>
                     </#list>
 
-                    <button type="submit" class="btn btn-outline-light w-100"><@s.message 'confirmation.teacher.button'/></button>
+                    <button type="submit"
+                            class="btn btn-outline-light w-100"><@s.message 'confirmation.teacher.button'/></button>
                 <#else>
                     <div class="bold link text-center"><@s.message 'confirmation.teacher.empty'/></div>
 
-                    <a class="btn btn-outline-light mt-2 w-100" href="/user"><@s.message 'confirmation.teacher.back'/></a>
+                    <a class="btn btn-outline-light mt-2 w-100"
+                       href="/user"><@s.message 'confirmation.teacher.back'/></a>
                 </#if>
-                
+
             </form>
         </div>
     </div>

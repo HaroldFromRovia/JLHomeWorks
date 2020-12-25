@@ -12,10 +12,10 @@ import java.util.Optional;
 @RepositoryRestResource
 public interface CompetenceRepository extends JpaRepository<Competence, Long> {
 
-    @RestResource(path = "byName", rel="competenceName")
+    @RestResource(path = "byName", rel = "competenceName")
     Optional<Competence> findByName(String name);
 
-    @RestResource(path = "byId", rel="competenceId")
+    @RestResource(path = "byId", rel = "competenceId")
     List<Competence> findAllByIdIn(List<Long> ids);
 
 }

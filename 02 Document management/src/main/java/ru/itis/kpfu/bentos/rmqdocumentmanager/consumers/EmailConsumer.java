@@ -21,7 +21,7 @@ public class EmailConsumer {
     private final ChannelFactory channelFactory;
     private User user;
 
-    public EmailConsumer(ObjectMapper objectMapper,ChannelFactory channelFactory) {
+    public EmailConsumer(ObjectMapper objectMapper, ChannelFactory channelFactory) {
         this.objectMapper = objectMapper;
         this.channelFactory = channelFactory;
         consume(channelFactory.createChannel(CONFIRMATION_EXCHANGE, "topic"));

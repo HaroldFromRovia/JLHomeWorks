@@ -33,7 +33,7 @@ public class EmployerController {
 
     @GetMapping("/employers")
     public String employersPage(@AuthenticationPrincipal UserDetailsImpl userDetails, Model model) {
-        if(userDetails != null) {
+        if (userDetails != null) {
             model.addAttribute("me", userDetails.getUser());
         }
         model.addAttribute("employers", employerRepository.findAll());
@@ -45,7 +45,7 @@ public class EmployerController {
     public String applicationsPage(Model model, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         Long employerId = userDetails.getId();
         Optional<Employer> employerOptional = employerRepository.findById(employerId);
-        if(employerOptional.isPresent()) {
+        if (employerOptional.isPresent()) {
             model.addAttribute("unreadApplications",
                     applicationService.getApplications(employerOptional.get(), false));
             model.addAttribute("readApplications",
@@ -56,10 +56,10 @@ public class EmployerController {
 
     @GetMapping("/apply/{user-id}")
     @PreAuthorize("hasRole('STUDENT')")
-    public String createApplication (@AuthenticationPrincipal UserDetailsImpl userDetails, @PathVariable("user-id") Long userId, ModelMap map){
+    public String createApplication(@AuthenticationPrincipal UserDetailsImpl userDetails, @PathVariable("user-id") Long userId, ModelMap map) {
         Optional<Employer> employerOptional = employerRepository.findById(userId);
         Optional<Student> studentOptional = studentRepository.findById(userDetails.getId());
-        if(employerOptional.isPresent() && studentOptional.isPresent()) {
+        if (employerOptional.isPresent() && studentOptional.isPresent()) {
             applicationService.apply(studentOptional.get(), employerOptional.get());
         }
         return "redirect:/employers";
@@ -67,11 +67,12 @@ public class EmployerController {
 
     @PostMapping("/applications")
     public String markRead(@RequestParam Map<String, String> params) {
-        for(Map.Entry<String, String> e : params.entrySet()) {
+        for (Map.Entry<String, String> e : params.entrySet()) {
             try {
                 Long applicationId = Long.parseLong(e.getKey());
                 applicationService.setRead(applicationRepository.findById(applicationId).get(), true);
-            }catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
         }
         return "redirect:/applications";
     }

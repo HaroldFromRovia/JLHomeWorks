@@ -15,10 +15,10 @@ public class SignInController {
 
     @GetMapping
     public String getForm(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestParam(value = "error", required = false) String error, ModelMap map) {
-        if(userDetails != null) {
+        if (userDetails != null) {
             return "redirect:/user";
         }
-        if(error != null) {
+        if (error != null) {
             map.put("error", "USER_NOT_FOUND");
         }
         return "auth/sign_in";

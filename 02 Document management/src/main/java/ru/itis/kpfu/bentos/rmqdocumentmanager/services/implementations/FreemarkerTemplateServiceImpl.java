@@ -25,7 +25,7 @@ public class FreemarkerTemplateServiceImpl implements FreemarkerTemplateService 
 
         var writer = new StringWriter();
         Map<String, User> map = new HashMap<>();
-        map.put("user",user);
+        map.put("user", user);
         configurer.getConfiguration().getTemplate("main.ftl").process(map, writer);
         System.out.println();
         return writer.toString();

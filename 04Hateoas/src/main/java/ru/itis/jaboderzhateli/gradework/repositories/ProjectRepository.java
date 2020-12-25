@@ -11,6 +11,6 @@ import ru.itis.jaboderzhateli.gradework.models.Project;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
 
     @Transactional
-    @RestResource(path = "byId", rel="studentId")
+    @RestResource(path = "byId", rel = "studentId")
     void deleteByStudent_Id(Long studentId);
 }

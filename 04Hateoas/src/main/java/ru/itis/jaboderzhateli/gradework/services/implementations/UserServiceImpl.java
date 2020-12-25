@@ -12,7 +12,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(String name) throws IllegalArgumentException{
+    public User getUser(String name) throws IllegalArgumentException {
         return null;
     }
 }

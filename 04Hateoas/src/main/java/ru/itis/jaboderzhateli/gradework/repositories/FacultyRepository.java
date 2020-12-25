@@ -10,7 +10,7 @@ import java.util.Optional;
 @RepositoryRestResource
 public interface FacultyRepository extends JpaRepository<Faculty, Long> {
 
-    @RestResource(path="byName", rel="facultyName")
+    @RestResource(path = "byName", rel = "facultyName")
     Optional<Faculty> findByName(String name);
 
 }

@@ -53,7 +53,7 @@ public class DocumentPDFWriter {
     public DocumentPDFWriter fillHeader(String header, User user) {
 
         var text = header + user.getName() + " " + user.getSurname() + "\n" + "Номер паспорта: "
-                + user.getPassportId() + "\n" + "Дата выдачи: " + user.getDateOfIssue() +"\n\n\n\n\n";
+                + user.getPassportId() + "\n" + "Дата выдачи: " + user.getDateOfIssue() + "\n\n\n\n\n";
 
         var paragraph = new Paragraph(text);
         paragraph.setTextAlignment(TextAlignment.RIGHT);

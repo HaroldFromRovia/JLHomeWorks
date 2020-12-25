@@ -26,10 +26,10 @@ public class SignUpServiceTest {
     private PasswordEncoder passwordEncoder;
 
     @Test
-    public void signUpStudentFull_shouldEqual(){
-        var form = new SignUpStudentForm("login","password", "password", "name",
-                "sur","mid","Программная инженерия", "Высшая школа информационных технологий и интеллектуальных систем", "11-804",
-                "link","phone",Short.valueOf("2000"), Short.valueOf("2004"), Byte.valueOf("90"), new Date(2));
+    public void signUpStudentFull_shouldEqual() {
+        var form = new SignUpStudentForm("login", "password", "password", "name",
+                "sur", "mid", "Программная инженерия", "Высшая школа информационных технологий и интеллектуальных систем", "11-804",
+                "link", "phone", Short.valueOf("2000"), Short.valueOf("2004"), Byte.valueOf("90"), new Date(2));
         var student = signUpService.signUp(form);
         assertThat(student.equals(Student.builder()
                 .login(form.getLogin())
@@ -51,8 +51,8 @@ public class SignUpServiceTest {
     }
 
     @Test
-    public void signUpEmployerFull_shouldEqual(){
-        var form = new SignUpTeacherForm("login","password","password", "name", "surname","mid", Byte.valueOf("2"),
+    public void signUpEmployerFull_shouldEqual() {
+        var form = new SignUpTeacherForm("login", "password", "password", "name", "surname", "mid", Byte.valueOf("2"),
                 "Высшая школа информационных технологий и интеллектуальных систем", "position", "link", Collections.emptyList());
         var teacher = signUpService.signUp(form);
         assertThat(teacher.equals(Teacher.builder()

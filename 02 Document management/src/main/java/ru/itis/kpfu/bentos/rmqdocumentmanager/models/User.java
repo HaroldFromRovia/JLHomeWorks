@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Profile({"confirm","all"})
+@Profile({"confirm", "all"})
 public class User {
 
     private String name;

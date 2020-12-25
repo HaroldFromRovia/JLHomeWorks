@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ApplicationService {
     void apply(Student student, Employer employer);
+
     List<JobApplication> getApplications(Employer employer, Boolean read);
+
     void setRead(JobApplication jobApplication, Boolean read);
 }

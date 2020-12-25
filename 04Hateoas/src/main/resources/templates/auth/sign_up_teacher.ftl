@@ -23,21 +23,25 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="login"><@s.message 'sign.login'/></span>
                     </div>
-                    <input type="text" class="form-control" name="login" aria-describedby="login" placeholder="<@s.message 'sign.login.placeholder'/>" required>
+                    <input type="text" class="form-control" name="login" aria-describedby="login"
+                           placeholder="<@s.message 'sign.login.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="password"><@s.message 'sign.password'/></span>
                     </div>
-                    <input type="password" minlength="8" class="form-control" name="password" aria-describedby="password" placeholder="<@s.message 'sign.password.placeholder'/>" required>
+                    <input type="password" minlength="8" class="form-control" name="password"
+                           aria-describedby="password" placeholder="<@s.message 'sign.password.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="password-repeat"><@s.message 'sign.password.repeat'/></span>
                     </div>
-                    <input type="password" class="form-control" minlength="8" name="passwordRepeat" aria-describedby="password-repeat" placeholder="<@s.message 'sign.password.repeat.placeholder'/>" required>
+                    <input type="password" class="form-control" minlength="8" name="passwordRepeat"
+                           aria-describedby="password-repeat"
+                           placeholder="<@s.message 'sign.password.repeat.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mb-2">
@@ -65,7 +69,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="year-start"><@s.message 'sign.up.teacher.experience'/></span>
                     </div>
-                    <input type="number" max="100" class="form-control" name="experience" aria-describedby="year-start" placeholder="<@s.message 'sign.up.teacher.experience.placeholder'/>" required>
+                    <input type="number" max="100" class="form-control" name="experience" aria-describedby="year-start"
+                           placeholder="<@s.message 'sign.up.teacher.experience.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mt-2">
@@ -107,13 +112,17 @@
                                 <option>${competence}</option>
                             </#list>
                         </select>
-                        <button type="button" onclick="removeList(this, 'competence-')" class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i class="fas fa-times"></i></button>
+                        <button type="button" onclick="removeList(this, 'competence-')"
+                                class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i
+                                    class="fas fa-times"></i></button>
                     </div>
                 </div>
 
-                <button type="button" id="competence-adder" class="btn btn-light w-100"><@s.message 'sign.competence.button'/></button>
+                <button type="button" id="competence-adder"
+                        class="btn btn-light w-100"><@s.message 'sign.competence.button'/></button>
 
-                <button type="submit" class="btn btn-outline-light w-100 mt-2"><@s.message 'sign.up.teacher.submit'/></button>
+                <button type="submit"
+                        class="btn btn-outline-light w-100 mt-2"><@s.message 'sign.up.teacher.submit'/></button>
             </form>
         </div>
     </div>

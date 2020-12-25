@@ -41,7 +41,8 @@ public class StudentServiceImpl implements StudentService {
         student.setAverage(Byte.valueOf(params.get("average")));
         try {
             student.setBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(params.get("birth")));
-        } catch (ParseException e) {}
+        } catch (ParseException e) {
+        }
         student.setFaculty(facultyService.getFaculty(params.get("faculty")));
         student.setGroup(params.get("group"));
         student.setLink(params.get("link"));

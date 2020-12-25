@@ -23,28 +23,34 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="name"><@s.message 'sign.name'/></span>
                     </div>
-                    <input type="text" class="form-control" name="name" aria-describedby="name" <#if user.name??>value="${user.name}"</#if> required>
+                    <input type="text" class="form-control" name="name" aria-describedby="name"
+                           <#if user.name??>value="${user.name}"</#if> required>
                 </div>
 
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="surname"><@s.message 'sign.surname'/></span>
                     </div>
-                    <input type="text" class="form-control" name="surname" aria-describedby="surname" <#if user.surname??>value="${user.surname}"</#if> required>
+                    <input type="text" class="form-control" name="surname" aria-describedby="surname"
+                           <#if user.surname??>value="${user.surname}"</#if> required>
                 </div>
 
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="middle-name"><@s.message 'sign.middle.name'/></span>
                     </div>
-                    <input type="text" class="form-control" name="middleName" <#if user.middleName??>value="${user.middleName}"</#if> aria-describedby="middle-name" required>
+                    <input type="text" class="form-control" name="middleName"
+                           <#if user.middleName??>value="${user.middleName}"</#if> aria-describedby="middle-name"
+                           required>
                 </div>
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="year-start"><@s.message 'sign.up.teacher.experience'/></span>
                     </div>
-                    <input type="number" max="100" class="form-control" name="experience" <#if user.experience??>value="${user.experience}"</#if> aria-describedby="year-start" placeholder="<@s.message 'sign.up.teacher.experience.placeholder'/>" required>
+                    <input type="number" max="100" class="form-control" name="experience"
+                           <#if user.experience??>value="${user.experience}"</#if> aria-describedby="year-start"
+                           placeholder="<@s.message 'sign.up.teacher.experience.placeholder'/>" required>
                 </div>
 
                 <div class="input-group mt-2">
@@ -63,14 +69,16 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="position"><@s.message 'sign.up.teacher.position'/></span>
                     </div>
-                    <input type="text" class="form-control" name="position" <#if user.position??>value="${user.position}"</#if> aria-describedby="position" required>
+                    <input type="text" class="form-control" name="position"
+                           <#if user.position??>value="${user.position}"</#if> aria-describedby="position" required>
                 </div>
 
                 <div class="input-group mt-2">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="link"><@s.message 'sign.contact.link.kfu'/></span>
                     </div>
-                    <input type="text" class="form-control" name="link" <#if user.link??>value="${user.link}"</#if> aria-describedby="link" required>
+                    <input type="text" class="form-control" name="link" <#if user.link??>value="${user.link}"</#if>
+                           aria-describedby="link" required>
                 </div>
 
                 <span class="text-center"><@s.message 'sign.up.teacher.competences'/></span>
@@ -90,7 +98,9 @@
                                         <option <#if competence == userCompetence.name>selected</#if>>${competence}</option>
                                     </#list>
                                 </select>
-                                <button type="button" onclick="removeList(this, 'competence-')" class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i class="fas fa-times"></i></button>
+                                <button type="button" onclick="removeList(this, 'competence-')"
+                                        class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i
+                                            class="fas fa-times"></i></button>
                             </div>
                         </div>
 
@@ -111,13 +121,17 @@
                                 <option>${competence}</option>
                             </#list>
                         </select>
-                        <button type="button" onclick="removeList(this, 'competence-')" class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i class="fas fa-times"></i></button>
+                        <button type="button" onclick="removeList(this, 'competence-')"
+                                class="btn btn-icon ml-2 d-flex justify-content-center align-items-center"><i
+                                    class="fas fa-times"></i></button>
                     </div>
                 </div>
 
-                <button type="button" id="competence-adder" class="btn btn-light w-100"><@s.message 'sign.competence.button'/></button>
+                <button type="button" id="competence-adder"
+                        class="btn btn-light w-100"><@s.message 'sign.competence.button'/></button>
 
-                <button type="submit" class="btn btn-outline-light w-100 mt-2"><@s.message 'page.edit.button.submit'/></button>
+                <button type="submit"
+                        class="btn btn-outline-light w-100 mt-2"><@s.message 'page.edit.button.submit'/></button>
             </form>
         </div>
     </div>

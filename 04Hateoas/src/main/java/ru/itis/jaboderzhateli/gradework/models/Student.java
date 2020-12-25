@@ -20,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-public class Student extends User{
+public class Student extends User {
 
     private Short yearStart;
     private Short yearGraduate;

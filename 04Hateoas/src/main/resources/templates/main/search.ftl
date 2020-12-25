@@ -9,8 +9,10 @@
     <#else>
         <@p.navbar/>
     </#if>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 
     <div class="d-flex flex-column justify-content-center my-auto mx-auto card-width">
         <div class="card">
@@ -27,7 +29,8 @@
 
                             <select id="search-multi" class="js-states form-control" multiple="multiple" name="c">
                                 <#list competences as comp>
-                                    <option <#if selectedComp?seq_contains(comp.getId())>selected</#if> value="${comp.getId()}">${comp.getName()}</option>
+                                    <option <#if selectedComp?seq_contains(comp.getId())>selected</#if>
+                                            value="${comp.getId()}">${comp.getName()}</option>
                                 </#list>
                             </select>
                         </div>
@@ -38,9 +41,11 @@
                             </div>
 
                             <select id="institute" class="js-states form-control input-group" name="i">
-                                <option <#if selectedInst == -1>selected</#if> value="-1"><@s.message 'search.any'/></option>
+                                <option <#if selectedInst == -1>selected</#if>
+                                        value="-1"><@s.message 'search.any'/></option>
                                 <#list institutes as inst>
-                                    <option <#if selectedInst == inst.getId()>selected</#if> value="${inst.getId()}">${inst.getName()}</option>
+                                    <option <#if selectedInst == inst.getId()>selected</#if>
+                                            value="${inst.getId()}">${inst.getName()}</option>
                                 </#list>
                             </select>
 
@@ -49,7 +54,8 @@
                             </div>
 
                             <select id="faculty" class="js-states form-control input-group" name="f">
-                                <option <#if selectedFac == -1>selected</#if> value="-1"><@s.message 'search.any'/></option>
+                                <option <#if selectedFac == -1>selected</#if>
+                                        value="-1"><@s.message 'search.any'/></option>
                                 <#list faculties as fac>
                                     <option <#if selectedFac == fac.getId()>selected</#if>value="${fac.getId()}">${fac.getName()}</option>
                                 </#list>
@@ -67,7 +73,8 @@
             <div class="card">
 
                 <#list students as st>
-                    <a href="/user/${st.id}" class="search-block link d-flex flex-column w-100<#if !st?is_last> mb-2</#if>">
+                    <a href="/user/${st.id}"
+                       class="search-block link d-flex flex-column w-100<#if !st?is_last> mb-2</#if>">
                         <div class="bold act-black">${st.surname} ${st.name} ${st.middleName}, ${st.group}</div>
                         <div class="regular act-black">${st.institute.name}, ${st.faculty.name}</div>
                         <div class="bold main-blue">
@@ -112,16 +119,19 @@
             border-color: var(--main-blue);
             border-top-style: none;
         }
+
         .select2-container .select2-selection--multiple {
             height: 44.8px;
             border-radius: 0;
             border-width: 3px;
             border-color: var(--main-blue);
         }
+
         .select2-container--open {
             border-width: 3px;
             border-color: #43b5e5;
         }
+
         .select2-container *:focus {
             border-width: 3px;
             border-color: #43b5e5;
