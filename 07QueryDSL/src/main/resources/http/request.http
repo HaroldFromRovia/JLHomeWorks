@@ -1,0 +1,8 @@
+GET localhost:8080/user/search/req?login=Ur
+
+###
+GET localhost:8080/user/search/con/almost?shops.name=S
+
+###
+
+GET localhost:8080/user/search/con/final?shops.name=GOG

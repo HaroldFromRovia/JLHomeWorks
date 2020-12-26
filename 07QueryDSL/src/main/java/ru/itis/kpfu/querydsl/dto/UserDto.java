@@ -1,4 +1,4 @@
-package ru.itis.kpfu.querydsl.models;
+package ru.itis.kpfu.querydsl.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,5 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Player {
+public class UserDto {
+
+    private String login;
+    private String nickname;
+    private String shopName;
+
 }
