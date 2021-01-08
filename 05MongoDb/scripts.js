@@ -1,2 +1,25 @@
 use new_db
-db.some_dumb_shit.insertOne({item: "UristMcEmhead"})
+
+db.users.insert(
+  [
+    {
+      name: "Ivan",
+      age: 16
+    },
+    {
+      name: "Vasya",
+      age: 14
+    },
+    {
+      name: "Alex",
+      age: 20
+    }]
+)
+
+db.users.find(
+  {
+    age:{
+      $gt:15
+    }
+  }
+)
